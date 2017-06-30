@@ -1,0 +1,6 @@
+name = Csas image loader
+description = Csas image loader
+package = Csas
+version = VERSION
+core = 7.x
+configure = admin/config/content/csas_il
