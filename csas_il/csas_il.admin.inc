@@ -15,5 +15,10 @@ function csas_il_admin_config_form() {
     '#title' => t('View empty all image'),
     '#default_value' => variable_get('csas_il_view_emplty_all', FALSE),
   );
+  $form['csas_il_use_visible'] = array(
+    '#type' => 'checkbox',
+    '#title' => t(':visible'),
+    '#default_value' => variable_get('csas_il_use_visible', FALSE),
+  );
   return system_settings_form($form);
 }

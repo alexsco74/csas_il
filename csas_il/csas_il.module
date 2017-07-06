@@ -47,9 +47,9 @@ function theme_csas_il_image($variables) {
     $src = _csas_il_build_src($attributes);
     $par_url = parse_url(url('', array('absolute' => TRUE)));
 
-    if(!empty($par_url['host'])){
+    if (!empty($par_url['host'])) {
       $bas_url = 'http://' . $par_url['host'];
-      if(strpos($src, $bas_url) === 0) {
+      if (strpos($src, $bas_url) === 0) {
         $src = str_replace($bas_url, '', $src);
       }
     }
@@ -126,6 +126,12 @@ function _csas_il_build_src($attributes) {
 function csas_il_init() {
   $m_path = drupal_get_path('module', 'csas_il');
   drupal_add_js($m_path . '/csas_il.js');
+  $js_set = array(
+    'csas_il' => array(
+      'useVis' => variable_get('csas_il_use_visible', FALSE) ? 1 : 0
+    )
+  );
+  drupal_add_js($js_set, 'setting');
   drupal_add_css($m_path . '/csas_il.css');
 }
 
