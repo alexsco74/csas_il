@@ -128,7 +128,8 @@ function csas_il_init() {
   drupal_add_js($m_path . '/csas_il.js');
   $js_set = array(
     'csas_il' => array(
-      'useVis' => variable_get('csas_il_use_visible', FALSE) ? 1 : 0
+      'useVis' => variable_get('csas_il_use_visible', FALSE) ? 1 : 0,
+      'inScr' => variable_get('csas_il_only_in_scr_are', TRUE) ? 1 : 0,
     )
   );
   drupal_add_js($js_set, 'setting');

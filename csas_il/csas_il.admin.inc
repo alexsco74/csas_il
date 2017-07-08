@@ -20,5 +20,11 @@ function csas_il_admin_config_form() {
     '#title' => t(':visible'),
     '#default_value' => variable_get('csas_il_use_visible', FALSE),
   );
+  $form['csas_il_only_in_scr_are'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Image in screen area'),
+    '#description' => t('Else all image load'),
+    '#default_value' => variable_get('csas_il_only_in_scr_are', TRUE),
+  );
   return system_settings_form($form);
 }
